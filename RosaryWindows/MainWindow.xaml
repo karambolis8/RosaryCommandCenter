@@ -7,6 +7,19 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
     <Grid>
-        
+        <TabControl>
+            <TabItem Header="SMS">
+                
+            </TabItem>
+            <TabItem Header="Odbiorcy">
+                <DataGrid ItemsSource="{Binding Members}" AutoGenerateColumns="False" CanUserAddRows="True" CanUserDeleteRows="True" >
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Imię" Binding="{Binding Name}" />
+                        <DataGridTextColumn Header="Nazwisko" Binding="{Binding Surname}" />
+                        <DataGridTextColumn Header="Telefon" Binding="{Binding Tel}" />
+                    </DataGrid.Columns>
+                </DataGrid>
+            </TabItem>
+        </TabControl>
     </Grid>
 </Window>

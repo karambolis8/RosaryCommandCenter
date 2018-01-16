@@ -1,17 +1,6 @@
-﻿using System;
+﻿using RosaryWPFWindows.Models;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace RosaryWindows
 {
@@ -23,6 +12,19 @@ namespace RosaryWindows
         public MainWindow()
         {
             InitializeComponent();
+
+            DataContext = new RosaryGroupModel()
+            {
+                Members = new List<RosaryMemberModel>
+                {
+                    new RosaryMemberModel { Name = "Adam", Surname = "Gudynowski", Tel = "513276485" }
+                }
+            };
+
+               /*
+                * https://damienbod.com/2013/11/18/using-sqlite-with-entity-framework-6-and-the-repository-pattern/
+                * sprawdzić gdzie powinien być ten sqlite podłączony czy w kazdej domenie czy jak
+                */
         }
     }
 }
